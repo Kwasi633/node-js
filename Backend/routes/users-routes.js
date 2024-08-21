@@ -8,7 +8,7 @@ const usersController = require('../controllers/user-controllers')
 
 router.get('/', usersController.getUsers);
 
-router.post('./signup', 
+router.post('/signup', 
 [
     check('name').not().isEmpty(),
     check('email').normalizeEmail().isEmail(),
@@ -16,6 +16,6 @@ router.post('./signup',
 ],
 usersController.signup)
 
-router.post('./login', usersController.login)
+router.post('/login', usersController.login)
  
 module.exports = router;
